@@ -1,6 +1,8 @@
 /**
  * @file
  * First attempt on creating a proxy with socket.io.
+ *
+ * @see https://stackoverflow.com/questions/18377296/passport-socketio-handshake-is-always-unauthorized
  */
 
 // Setup the basic variables need to create the server
