@@ -41,13 +41,20 @@ Backend.prototype.start = function start() {
 
   // ========================================== //
   // ============ BACKEND REQUESTS ============ //
+  // ========================================== //
   app.post('/api/screen/activate', function (req, res) {
     var activationCode = req.body.activationCode;
     var token = req.body.token;
 
-    res.send(403);
-  });
+    console.log('MOCK BK: ' + activationCode);
 
+    if (activationCode === '12345678') {
+      res.send(200);
+    }
+    else {
+      res.send(403);
+    }
+  });
 
   // Start the server.
   server.listen(app.get('port'), function (){

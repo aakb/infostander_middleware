@@ -20,8 +20,6 @@ var back = new Backend({ 'port' : 8080 });
 var Client = require('./lib/client.mock');
 var frontend = new Client({ 'port' : 3080 });
 
-var request = require('request');
-
 // Start the application.
 var exec = require('child_process').exec;
 var child;
@@ -35,7 +33,7 @@ child = exec('node app.js --config=' + conf_file,
 });
 
 // Give the application a change to start-up.
-require('sleep').sleep(2);
+require('sleep').sleep(1);
 
 
 // ======================================= //
@@ -76,5 +74,5 @@ back.once('started', function() {
     // Error in the request send http code.
     console.log(data);
   });
-  frontend.send('/activate', { activationCode: 'test' });
+  frontend.send('/activate', { activationCode: '12345678' });
 });
